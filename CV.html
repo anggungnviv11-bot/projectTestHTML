@@ -4,242 +4,400 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Anggun Genovive Tamaka</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        /* Reset Dasar */
+    
+        :root {
+            --primary: #6366f1;
+            --secondary: #ec4899;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
-            color: #333;
-            line-height: 1.6;
+            background-color: var(--dark);
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+            color: var(--light);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
         }
 
-        /* Layout Utama */
-        .container {
+        .cv-container {
+            width: 100%;
+            max-width: 900px;
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
             display: flex;
-            max-width: 1000px;
-            margin: 40px auto;
-            background: #fff;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            flex-direction: row;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .left-side {
+            width: 35%;
+            background: linear-gradient(180deg, rgba(99,102,241,0.2) 0%, rgba(30,41,59,1) 100%);
+            padding: 40px 30px;
+            text-align: center;
+            border-right: 1px solid var(--glass-border);
+            position: relative;
+        }
+
+        .left-side::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            background: var(--primary);
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.4;
+            z-index: 0;
+        }
+
+        .profile-pic {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 25px;
+        }
+
+        .profile-pic img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+            transition: transform 0.3s;
+        }
+
+        .profile-pic img:hover {
+            transform: scale(1.05);
+        }
+
+        .left-side h1 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            line-height: 1.3;
+            position: relative;
+            z-index: 1;
+        }
+
+        .left-side .role {
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-box, .skills-box {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            text-align: left;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-box h3, .skills-box h3 {
+            font-size: 1rem;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .contact-list li {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+        }
+
+        .contact-list i {
+            width: 25px;
+            color: var(--secondary);
+        }
+
+        .contact-list a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .contact-list a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .skill-item {
+            margin-bottom: 12px;
+        }
+        
+        .skill-name {
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
             overflow: hidden;
         }
 
-        /* Sidebar (Bagian Kiri) */
-        .sidebar {
-            background-color: #2c3e50;
-            color: #fff;
-            width: 30%;
-            padding: 30px;
-            text-align: center;
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 10px;
+            animation: slideIn 1.5s ease-out;
         }
 
-        .profile-img img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #ecf0f1;
-            margin-bottom: 20px;
-        }
-
-        .sidebar h1 {
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-        }
-
-        .job-title {
-            font-size: 0.9rem;
-            color: #bdc3c7;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .sidebar h3 {
-            border-bottom: 2px solid #34495e;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-            margin-top: 30px;
-            font-size: 1.1rem;
-            text-align: left;
-        }
-
-        .contact-info ul, .skills ul {
-            list-style: none;
-            text-align: left;
-        }
-
-        .contact-info li, .skills li {
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-        }
-
-        .contact-info a {
-            color: #ecf0f1;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-info a:hover {
-            color: #3498db;
-        }
-
-        /* Konten Utama (Bagian Kanan) */
-        .content {
-            width: 70%;
+        .right-side {
+            width: 65%;
             padding: 40px;
         }
 
         .section {
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
-        .section h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
+            gap: 15px;
+        }
+
+        .section-title i {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.2rem;
+        }
+
+        .about-text {
+            color: #cbd5e1;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        .edu-card {
+            background: var(--glass);
+            border-left: 4px solid var(--secondary);
+            padding: 15px 20px;
+            border-radius: 0 10px 10px 0;
+            margin-bottom: 15px;
+            transition: 0.3s;
+        }
+
+        .edu-card:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateX(5px);
+        }
+
+        .edu-card h4 {
+            font-size: 1.1rem;
+            color: var(--light);
+        }
+
+        .edu-card .date {
+            font-size: 0.8rem;
+            color: var(--secondary);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .edu-card p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        .hobbies {
+            display: flex;
+            flex-wrap: wrap;
             gap: 10px;
         }
 
-        .section p {
-            margin-bottom: 10px;
-            text-align: justify;
-        }
-
-        .education-item, .project-item {
-            background: #f9f9f9;
-            padding: 15px;
-            border-left: 4px solid #3498db;
-            margin-bottom: 15px;
-            border-radius: 4px;
-        }
-
-        .education-item h3, .project-item h3 {
-            margin-bottom: 5px;
-            color: #2c3e50;
-        }
-
-        .date {
+        .hobby-tag {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: #a5b4fc;
+            padding: 8px 16px;
+            border-radius: 20px;
             font-size: 0.85rem;
-            color: #7f8c8d;
-            font-style: italic;
-            margin-bottom: 5px;
+            transition: 0.3s;
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #2c3e50;
-            color: #fff;
+        .hobby-tag:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .footer {
+            margin-top: 20px;
+            text-align: right;
             font-size: 0.8rem;
+            color: #64748b;
         }
 
-        /* Responsif (Untuk HP) */
         @media (max-width: 768px) {
-            .container {
+            .cv-container {
                 flex-direction: column;
-                margin: 0;
                 width: 100%;
-                border-radius: 0;
             }
-
-            .sidebar {
+            .left-side, .right-side {
                 width: 100%;
-                padding: 20px;
             }
-
-            .content {
-                width: 100%;
-                padding: 20px;
+            .left-side {
+                padding: 30px 20px;
+            }
+            .right-side {
+                padding: 30px 20px;
             }
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideIn {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Bagian Kiri (Sidebar) -->
-        <aside class="sidebar">
-            <div class="profile-img">
-                <!-- Ganti src dengan foto asli kamu, contoh: src="foto.jpg" -->
-                <img src="https://via.placeholder.com/150" alt="Foto Profil">
+    <div class="cv-container">
+        
+        <aside class="left-side">
+            <div class="profile-pic">
+            
+                <img src="anggun.jpeg" alt="Foto Profil">
             </div>
             
             <h1>Anggun Genovive Tamaka</h1>
-            <p class="job-title">Mahasiswa Teknik Informatika</p>
+            <p class="role">Mahasiswa T. Informatika</p>
 
-            <div class="contact-info">
-                <h3>Kontak</h3>
-                <ul>
-                    <li><i class="fas fa-envelope"></i> angguntamaka11@gmail.com</li>
-                    <li><i class="fas fa-phone"></i> 081314415385</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Sulawesi Utara, Indonesia</li>
+            <div class="contact-box">
+                <h3><i class="fas fa-address-card"></i> Kontak</h3>
+                <ul class="contact-list">
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:angguntamaka11@gmail.com">angguntamaka11@gmail.com</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:081314415385">0813 1441 5385</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Manado, Sulawesi utara</span>
+                    </li>
                 </ul>
             </div>
 
-            <div class="skills">
-                <h3>Keterampilan</h3>
-                <ul>
-                    <li>HTML & CSS</li>
-                    <li>JavaScript Dasar</li>
-                    <li>Microsoft Office</li>
-                    <li>Desain Grafis</li>
-                    <li>Pemecahan Masalah</li>
-                </ul>
+            <div class="skills-box">
+                <h3><i class="fas fa-cogs"></i> Keterampilan</h3>
+                
+                <div class="skill-item">
+                    <div class="skill-name"><span>HTML & CSS</span> <span>80%</span></div>
+                    <div class="progress-bar"><div class="progress" style="width: 80%"></div></div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-name"><span>JavaScript</span> <span>50%</span></div>
+                    <div class="progress-bar"><div class="progress" style="width: 50%"></div></div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-name"><span>Microsoft Office</span> <span>90%</span></div>
+                    <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
+                </div>
+
             </div>
         </aside>
 
-        <!-- Bagian Kanan (Konten Utama) -->
-        <main class="content">
+        <main class="right-side">
+            
+            <!-- Profil -->
             <section class="section">
-                <h2><i class="fas fa-user"></i> Profil</h2>
-                <p>
-                    Saya adalah mahasiswa Politeknik Negeri Manado Program Studi Teknik Informatika. 
-                    Saya memiliki minat yang besar dalam pengembangan web dan teknologi informasi. 
-                    Saya bersemangat untuk belajar hal baru dan siap berkontribusi dalam proyek tim.
+                <h2 class="section-title"><i class="fas fa-user"></i> Profil Diri</h2>
+                <p class="about-text">
+                    Hai! Saya <strong>Anggun Genovive Tamaka</strong>, mahasiswa aktif di <strong>Politeknik Negeri Manado</strong> Program Studi Teknik Informatika. 
+                    Saya adalah individu yang memiliki semangat tinggi dalam dunia teknologi, khususnya pengembangan web dan desain antarmuka. 
+                    Saya senang mempelajari teknologi baru dan tertarik untuk berkontribusi dalam proyek-proyek inovatif.
                 </p>
             </section>
 
             <section class="section">
-                <h2><i class="fas fa-graduation-cap"></i> Pendidikan</h2>
-                <div class="education-item">
-                    <h3>Politeknik Negeri Manado</h3>
-                    <p class="date">2023 - Sekarang</p>
-                    <p><strong>Program Studi:</strong> Teknik Informatika</p>
-                    <p>Mempelajari dasar-dasar pemrograman, basis data, jaringan komputer, dan rekayasa perangkat lunak.</p>
+                <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Riwayat Pendidikan</h2>
+                
+                <div class="edu-card">
+                    <span class="date">2024 - Sekarang</span>
+                    <h4>Politeknik Negeri Manado</h4>
+                    <p>Program Studi : Teknik Informatika</p>
+                    <p style="margin-top: 5px; font-size: 0.85rem;">Menguasai dasar pemrograman, jaringan, basis data, dan desain sistem.</p>
+                </div>
+
+                <div class="edu-card">
+                    <span class="date">2020 - 2022</span>
+                    <h4>SMA</h4>
+                    <p>Jurusan : IPA</p>
                 </div>
             </section>
 
             <section class="section">
-                <h2><i class="fas fa-laptop-code"></i> Pengalaman & Proyek</h2>
-                <div class="project-item">
-                    <h3>Proyek Web Pribadi (CV Online)</h3>
-                    <p class="date">2024</p>
-                    <p>Membangun halaman web responsif menggunakan HTML dan CSS untuk menampilkan profil diri.</p>
-                </div>
-                <div class="project-item">
-                    <h3>Proyek Tugas Kuliah</h3>
-                    <p class="date">2023 - 2024</p>
-                    <p>Mengerjakan berbagai tugas logika pemrograman dan struktur data menggunakan Python dan C++.</p>
+                <h2 class="section-title"><i class="fas fa-heart"></i> Minat & Hobby</h2>
+                <div class="hobbies">
+                    <span class="hobby-tag">Olahraga</span>
+                    <span class="hobby-tag">Hiking</span>
+                    <span class="hobby-tag">Diving</span>
                 </div>
             </section>
+
         </main>
     </div>
-
-    <footer>
-        <p>&copy; 2024 Anggun Genovive Tamaka.</p>
-    </footer>
 
 </body>
 </html>

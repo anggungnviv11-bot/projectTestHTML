@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Anggun Genovive Tamaka</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reset Dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Layout Utama */
+        .container {
+            display: flex;
+            max-width: 1000px;
+            margin: 40px auto;
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* Sidebar (Bagian Kiri) */
+        .sidebar {
+            background-color: #2c3e50;
+            color: #fff;
+            width: 30%;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .profile-img img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #ecf0f1;
+            margin-bottom: 20px;
+        }
+
+        .sidebar h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .job-title {
+            font-size: 0.9rem;
+            color: #bdc3c7;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .sidebar h3 {
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            margin-top: 30px;
+            font-size: 1.1rem;
+            text-align: left;
+        }
+
+        .contact-info ul, .skills ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .contact-info li, .skills li {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .contact-info a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: #3498db;
+        }
+
+        /* Konten Utama (Bagian Kanan) */
+        .content {
+            width: 70%;
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section p {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .education-item, .project-item {
+            background: #f9f9f9;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        .education-item h3, .project-item h3 {
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        .date {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #2c3e50;
+            color: #fff;
+            font-size: 0.8rem;
+        }
+
+        /* Responsif (Untuk HP) */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                margin: 0;
+                width: 100%;
+                border-radius: 0;
+            }
+
+            .sidebar {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .content {
+                width: 100%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Bagian Kiri (Sidebar) -->
+        <aside class="sidebar">
+            <div class="profile-img">
+                <!-- Ganti src dengan foto asli kamu, contoh: src="foto.jpg" -->
+                <img src="https://via.placeholder.com/150" alt="Foto Profil">
+            </div>
+            
+            <h1>Anggun Genovive Tamaka</h1>
+            <p class="job-title">Mahasiswa Teknik Informatika</p>
+
+            <div class="contact-info">
+                <h3>Kontak</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> angguntamaka11@gmail.com</li>
+                    <li><i class="fas fa-phone"></i> 081314415385</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Sulawesi Utara, Indonesia</li>
+                </ul>
+            </div>
+
+            <div class="skills">
+                <h3>Keterampilan</h3>
+                <ul>
+                    <li>HTML & CSS</li>
+                    <li>JavaScript Dasar</li>
+                    <li>Microsoft Office</li>
+                    <li>Desain Grafis</li>
+                    <li>Pemecahan Masalah</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Bagian Kanan (Konten Utama) -->
+        <main class="content">
+            <section class="section">
+                <h2><i class="fas fa-user"></i> Profil</h2>
+                <p>
+                    Saya adalah mahasiswa Politeknik Negeri Manado Program Studi Teknik Informatika. 
+                    Saya memiliki minat yang besar dalam pengembangan web dan teknologi informasi. 
+                    Saya bersemangat untuk belajar hal baru dan siap berkontribusi dalam proyek tim.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2><i class="fas fa-graduation-cap"></i> Pendidikan</h2>
+                <div class="education-item">
+                    <h3>Politeknik Negeri Manado</h3>
+                    <p class="date">2023 - Sekarang</p>
+                    <p><strong>Program Studi:</strong> Teknik Informatika</p>
+                    <p>Mempelajari dasar-dasar pemrograman, basis data, jaringan komputer, dan rekayasa perangkat lunak.</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2><i class="fas fa-laptop-code"></i> Pengalaman & Proyek</h2>
+                <div class="project-item">
+                    <h3>Proyek Web Pribadi (CV Online)</h3>
+                    <p class="date">2024</p>
+                    <p>Membangun halaman web responsif menggunakan HTML dan CSS untuk menampilkan profil diri.</p>
+                </div>
+                <div class="project-item">
+                    <h3>Proyek Tugas Kuliah</h3>
+                    <p class="date">2023 - 2024</p>
+                    <p>Mengerjakan berbagai tugas logika pemrograman dan struktur data menggunakan Python dan C++.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Anggun Genovive Tamaka.</p>
+    </footer>
+
+</body>
+</html>
